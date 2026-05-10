@@ -41,8 +41,8 @@ public class FindNumberIndexInSortedArrayTest {
     void givenEmptyInputArrayAndTargetAsValid_thenReturnIllegalInputException(){
         int [] input = {};
 
-        IllegalArgumentException nullPointerException = assertThrows(IllegalArgumentException.class,()->findNumberIndexInSortedArray.findIndex(input,35));
-        assertEquals("Array must have at least one element",nullPointerException.getMessage());
+        IllegalArgumentException illegalArgumentException = assertThrows(IllegalArgumentException.class,()->findNumberIndexInSortedArray.findIndex(input,35));
+        assertEquals("Array must have at least one element",illegalArgumentException.getMessage());
     }
 
 

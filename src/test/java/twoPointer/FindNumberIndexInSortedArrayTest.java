@@ -1,7 +1,6 @@
 package test.java.twoPointer;
 
 import main.java.twoPointer.FindNumberIndexInSortedArray;
-import org.junit.Before;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -31,9 +30,8 @@ public class FindNumberIndexInSortedArrayTest {
 
     @Test
     void givenNullInputArrayAndTargetAsValid_thenReturnIllegalInputException(){
-        int [] input = null;
 
-       NullPointerException nullPointerException = assertThrows(NullPointerException.class,()->findNumberIndexInSortedArray.findIndex(input,35));
+       NullPointerException nullPointerException = assertThrows(NullPointerException.class,()->findNumberIndexInSortedArray.findIndex(null,35));
         assertEquals("Cannot read the array length because \"input\" is null",nullPointerException.getMessage());
     }
 

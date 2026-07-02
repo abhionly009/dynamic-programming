@@ -11,7 +11,7 @@ public class SubArraySumEqualsK {
         for (int right =0;right<input.length;right++){
 
             sum +=input[right];
-            if (sum>k && left<=right){
+            while (sum>k && left<=right){
                 sum -= input[left];
             }
 

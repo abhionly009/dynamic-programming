@@ -1,7 +1,7 @@
 package main.java.twoPointer;
 
 /**
- * Given an Array need to find the indexes so that the sum of these two number is equal to target
+ * Given sorted Array need to find the indexes so that the sum of these two number is equal to target
  * value if not found return -1,-1
  */
 public class TwoSumProblem {

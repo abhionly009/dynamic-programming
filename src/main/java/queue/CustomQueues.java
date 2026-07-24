@@ -1,8 +1,10 @@
 package main.java.queue;
 
-public class CustomQueues {
+import java.util.Arrays;
 
-   private int [] arr ;
+public class CustomQueues<T> {
+
+   private Object [] arr ;
     private int front;
     private int rear;
     private int capacity;
@@ -11,50 +13,47 @@ public class CustomQueues {
 
     public CustomQueues( int capacity) {
         this.capacity = capacity;
-        this.arr = new int[capacity];
+        this.arr = new Object[capacity];
         this.front =0;
         this.rear = 0;
         this.size = 0;
 
     }
 
-    public void offer(int data){
+    public void offer(T data){
 
         if (size == capacity){
             throw new RuntimeException("Queue is already full");
         }
 
         arr[rear] = data;
-        rear++;
+        rear = (rear + 1) % capacity;
         size++;
 
     }
 
-    public int peek(){
+    @SuppressWarnings("unchecked")
+    public T peek(){
 
         if (size ==0){
             throw new RuntimeException("No element Queue is empty");
         }
-        return arr[front];
+        return (T) arr[front];
     }
 
-    public int poll(){
+    @SuppressWarnings("unchecked")
+    public T poll(){
         if (size ==0){
             throw new RuntimeException("No element Queue is empty");
         }
 
-       int value =  arr[front] ;
+       T value =  (T) arr[front] ;
         arr[front] = 0;
         front++;
         size--;
         return value;
     }
 
-    public void print(){
-        for(int num:arr){
-            System.out.print( num +" ");
-        }
-    }
 
     public boolean isEmpty(){
         return size ==0;
@@ -64,5 +63,8 @@ public class CustomQueues {
         return size;
     }
 
-
+    @Override
+    public String toString() {
+        return Arrays.toString(arr);
+    }
 }

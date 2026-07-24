@@ -10,15 +10,14 @@ public class CustomQueueMain {
         customQueues.offer(20);
         customQueues.offer(30);
 
-        customQueues.print();
-        System.out.println();
+        System.out.println(customQueues);
         System.out.println(customQueues.isEmpty());
 
         System.out.println(customQueues.peek());
 
         System.out.println(customQueues.poll());
 
-        customQueues.print();
+        System.out.println(customQueues);
 
         System.out.println(customQueues.size());
 

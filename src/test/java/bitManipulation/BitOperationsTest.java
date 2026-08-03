@@ -23,7 +23,7 @@ public class BitOperationsTest {
         int position = 2;
         boolean result  = bitOperations.isBitSet(input,position);
 
-        assertEquals(result,true);
+        assertEquals(true,result);
     }
 
     @Test
@@ -32,7 +32,29 @@ public class BitOperationsTest {
         int position = 1;
         boolean result  = bitOperations.isBitSet(input,position);
 
-        assertEquals(result,false);
+        assertEquals(false,result);
+    }
+
+    @Test
+    public void givenInputIsValidThenSetValue(){
+
+        int input = 9;
+        int position =2 ;
+
+        int result = bitOperations.setBit(input,position);
+
+        assertEquals(13,result);
+    }
+
+    @Test
+    public void givenInputIsValidThenSetValueAndReturn(){
+
+        int input = 8;
+        int position =2 ;
+
+        int result = bitOperations.setBit(input,position);
+
+        assertEquals(12,result);
     }
 
 

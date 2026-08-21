@@ -31,7 +31,11 @@ public class LinkedListDemoMain {
         linkedListCreation.display();
 
         linkedListCreation.reverse();
-    linkedListCreation.display();
+        linkedListCreation.display();
+
+        boolean isUpdated = linkedListCreation.update(310,400);
+        System.out.println(isUpdated);
+        linkedListCreation.display();
 
     boolean result = linkedListCreation.searchElement(30);
 

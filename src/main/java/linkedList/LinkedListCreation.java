@@ -151,4 +151,25 @@ public class LinkedListCreation {
     }
 
 
+    public boolean update(int oldValue, int newValue){
+        boolean result = false;
+
+        if (head == null){
+            return result;
+        }
+
+        Node current = head;
+
+        while (current.next != null){
+
+            if (current.value == oldValue){
+                current.value = newValue;
+                result = true;
+            }
+                current = current.next;
+
+        }
+        return result;
+    }
+
 }

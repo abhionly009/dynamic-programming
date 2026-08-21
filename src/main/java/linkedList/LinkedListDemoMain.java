@@ -26,5 +26,8 @@ public class LinkedListDemoMain {
         linkedListCreation.deleteFirstElement();
 
         linkedListCreation.display();
+
+        linkedListCreation.deleteLastElement();
+        linkedListCreation.display();
     }
 }

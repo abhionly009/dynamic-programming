@@ -64,6 +64,18 @@ public class LinkedListCreation {
     }
 
 
+    public void deleteFirstElement(){
+
+        if (head == null){
+            System.out.println("There is no element to delete, List is empty");
+            return;
+        }
+
+        Node current = head;
+
+        head = current.next;
+
+    }
 
 
 }

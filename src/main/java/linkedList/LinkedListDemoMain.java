@@ -21,5 +21,10 @@ public class LinkedListDemoMain {
 
         linkedListCreation.insertAtEnd(100);
         linkedListCreation.display();
+
+
+        linkedListCreation.deleteFirstElement();
+
+        linkedListCreation.display();
     }
 }

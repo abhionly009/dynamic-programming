@@ -130,4 +130,25 @@ public class LinkedListCreation {
     }
 
 
+    public boolean searchElement(int value){
+        boolean result = false;
+
+        if (head == null){
+            return result;
+        }
+        Node current = head;
+
+        while (current.next!=null){
+
+            if (current.value == value){
+                return true;
+            }else {
+                current = current.next;
+            }
+
+        }
+        return result;
+    }
+
+
 }

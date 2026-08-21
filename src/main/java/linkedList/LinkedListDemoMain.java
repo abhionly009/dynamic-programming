@@ -32,5 +32,15 @@ public class LinkedListDemoMain {
 
         linkedListCreation.reverse();
     linkedListCreation.display();
+
+    boolean result = linkedListCreation.searchElement(30);
+
+        if (result) {
+            System.out.println("found");
+        }else{
+            System.out.println("No such element found");
+        }
+
+
     }
 }

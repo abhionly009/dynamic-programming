@@ -13,5 +13,9 @@ public class LinkedListDemoMain {
         linkedListCreation.insert(90);
 
         linkedListCreation.display();
+
+
+        linkedListCreation.insertAtBeginning(5);
+        linkedListCreation.display();
     }
 }

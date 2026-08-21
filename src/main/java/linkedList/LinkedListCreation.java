@@ -24,6 +24,16 @@ public class LinkedListCreation {
         current.next = newNode;
     }
 
+    public void insertAtBeginning(int value){
+        Node newNode = new Node(value);
+        if (head == null){
+            head = newNode;
+            return;
+        }
+        newNode.next = head;
+        head = newNode;
+    }
+
 
     public void display() {
         Node current = head;

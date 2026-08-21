@@ -29,5 +29,8 @@ public class LinkedListDemoMain {
 
         linkedListCreation.deleteLastElement();
         linkedListCreation.display();
+
+        linkedListCreation.reverse();
+    linkedListCreation.display();
     }
 }

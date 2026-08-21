@@ -96,7 +96,36 @@ public class LinkedListCreation {
         }
 
         current.next = null;
+    }
 
+
+    // head last element should be head and head should be last and it's next should point to null
+    public void reverse(){
+
+        if (head == null){
+            System.out.println("List is empty");
+            return;
+        }
+
+        if (head.next == null){
+            System.out.println("Single element there must be at least 2 element to reverse");
+            return;
+        }
+
+        Node previous = null;
+        Node current = head;
+
+        while (current != null) {
+
+            Node next = current.next;  // Save next node
+
+            current.next = previous;  // Reverse the link
+
+            previous = current;       // Move previous forward
+            current = next;           // Move current forward
+        }
+
+        head = previous;
 
     }
 

@@ -5,13 +5,13 @@ public class LinkedListCreation {
     private Node head;
 
 
-    public void insert(int value) {
+    public Node insert(int value) {
         Node newNode = new Node(value);
 
         // If list is empty
         if (head == null) {
             head = newNode;
-            return;
+            return null;
         }
 
         // Traverse till last node
@@ -22,6 +22,8 @@ public class LinkedListCreation {
 
         // Attach new node
         current.next = newNode;
+
+        return current;
     }
 
     public void insertAtBeginning(int value){
@@ -53,6 +55,17 @@ public class LinkedListCreation {
 
 
     public void display() {
+        Node current = head;
+
+        while (current != null) {
+            System.out.print(current.value + " -> ");
+            current = current.next;
+        }
+
+        System.out.println("null");
+    }
+
+    public static void traverse(Node head) {
         Node current = head;
 
         while (current != null) {

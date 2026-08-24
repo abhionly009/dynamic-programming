@@ -1,6 +1,8 @@
 package main.java.queue;
 
 import java.util.Arrays;
+import java.util.Queue;
+import java.util.Stack;
 
 public class CustomQueues<T> {
 
@@ -54,6 +56,21 @@ public class CustomQueues<T> {
         return value;
     }
 
+
+    public void reverseQueue(Queue<Integer> queue) {
+
+        Stack<Integer> stack = new Stack<>();
+
+        // Move queue elements to stack
+        while (!queue.isEmpty()) {
+            stack.push(queue.poll());
+        }
+
+        // Move stack elements back to queue
+        while (!stack.isEmpty()) {
+            queue.offer(stack.pop());
+        }
+    }
 
     public boolean isEmpty(){
         return size ==0;

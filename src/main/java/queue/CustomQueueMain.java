@@ -1,5 +1,8 @@
 package main.java.queue;
 
+import java.util.LinkedList;
+import java.util.Queue;
+
 public class CustomQueueMain {
 
     public static void main(String[] args) {
@@ -21,5 +24,15 @@ public class CustomQueueMain {
 
         System.out.println(customQueues.size());
 
+        Queue<Integer> queue = new LinkedList<>();
+
+        queue.offer(10);
+        queue.offer(20);
+        queue.offer(30);
+        queue.offer(40);
+        System.out.println(queue);
+        customQueues.reverseQueue(queue);
+
+        System.out.println(queue);
     }
 }

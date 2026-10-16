@@ -1,6 +1,5 @@
 package main.java.practice2026.array;
 
-import java.util.HashSet;
 import java.util.LinkedHashSet;
 import java.util.Set;
 
@@ -25,7 +24,7 @@ public class RemoveDuplicatesFromArray {
 
     public static void main(String[] args) {
 
-        int [] arr =  {4, 5, 1, 2, 1,3,7, 4, 5};
+        int [] arr =  {4, 5, 1, 2, 1, 3, 7, 4, 5};
         removeDuplicateFromArray(arr);
     }
 }

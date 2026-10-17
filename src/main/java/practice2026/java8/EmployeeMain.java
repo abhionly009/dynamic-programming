@@ -1,6 +1,7 @@
 package main.java.practice2026.java8;
 
 import java.util.*;
+import java.util.stream.Collectors;
 
 public class EmployeeMain {
 
@@ -176,6 +177,28 @@ public class EmployeeMain {
         System.out.println("Avg " + stats.getAverage());
         System.out.println("Max " + stats.getMax());
         System.out.println("Min " + stats.getMin());
+
+
+//Convert all employee names into a List.
+
+      List<String> names =   employees.stream().map(Employee::getName)
+                .toList();
+
+        System.out.println(names);
+
+        // Collect all departments into a Set.
+
+      Set<String> departments =   employees.stream().map(Employee::getDepartment)
+                .collect(Collectors.toSet());
+
+        System.out.println(departments);
+
+        // Create a Map of employee ID to employee name.
+
+        Map<Integer, String> collect = employees.stream().collect(Collectors.toMap(Employee::getId, Employee::getName));
+
+        System.out.println(collect);
+
 
 
 

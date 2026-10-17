@@ -1,9 +1,6 @@
 package main.java.practice2026.java8;
 
-import java.util.Comparator;
-import java.util.List;
-import java.util.Optional;
-import java.util.stream.Collectors;
+import java.util.*;
 
 public class EmployeeMain {
 
@@ -122,6 +119,65 @@ public class EmployeeMain {
       // Skip the first 5 employees and print the rest.
 
         employees.stream().skip(5).forEach(System.out::println);
+
+
+        // Check whether any employee earns more than 100,000.
+
+        employees.stream().filter(employee -> employee.getSalary()>100000)
+                .findAny().stream().forEach(System.out::println);
+
+        // Check whether all employees are older than 18.
+
+        boolean isAllEmployeeAbove18 = employees.stream().allMatch(employee -> employee.getAge()>18);
+        System.out.println(isAllEmployeeAbove18);
+
+        // Check whether no employee earns less than 30,000.
+
+        boolean isNoneEmployeeEarningLess30K = employees.stream().noneMatch(employee -> employee.getSalary()<30000);
+
+        System.out.println(isAllEmployeeAbove18);
+
+
+//        Calculate the total salary of all employees.
+
+        double sumOfSalary = employees.stream()
+                .mapToDouble(Employee::getSalary)
+                .sum();
+
+        System.out.println(sumOfSalary);
+
+        // Calculate the average employee salary.
+
+        OptionalDouble average = employees.stream().mapToDouble(Employee::getSalary)
+                .average();
+
+        System.out.println(average);
+
+        // Calculate the average age.
+
+       OptionalDouble avgAge =  employees.stream().mapToInt(Employee::getAge).average();
+
+        System.out.println(avgAge);
+
+        // Find the maximum salary using mapToDouble().
+
+       Double maxSalary =  employees.stream().mapToDouble(Employee::getSalary)
+                .max()
+                .orElse(0.0);
+
+        System.out.println(maxSalary);
+
+
+       DoubleSummaryStatistics stats =  employees.stream().mapToDouble(Employee::getSalary)
+                .summaryStatistics();
+
+        System.out.println("Count " + stats.getCount());
+        System.out.println("Sum " + stats.getSum());
+        System.out.println("Avg " + stats.getAverage());
+        System.out.println("Max " + stats.getMax());
+        System.out.println("Min " + stats.getMin());
+
+
 
     }
 }
